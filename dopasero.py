@@ -25,15 +25,6 @@ for i in range(data.shape[0]):
 new_img = nib.Nifti1Image(estimated_flows, img.affine)
 nib.save(new_img, 'estimated_flows.nii')
 
-
-import numpy as np
-import nibabel as nib
-from nilearn import image
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-
-
 img = nib.load('estimated_flows.nii')
 data = img.get_fdata()
 data = np.reshape(data, (np.prod(data.shape[:3]), 1))
