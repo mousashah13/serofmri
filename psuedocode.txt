@@ -1,0 +1,20 @@
+>>Import the necessary libraries: numpy, nibabel, nilearn, sklearn
+>>Load the preprocessed fMRI data from a .nii file into the variable 'img'
+>>Get the data from the 'img' variable and store it in the variable 'data'
+>>Create a design matrix of size (number of time points, 2) with the first column being all ones and the second column being a range from 0 to number of time points. Store the matrix in the variable 'design_matrix'
+>>Initialize an array 'estimated_flows' with the same shape as the first three dimensions of 'data'
+>>For each voxel (i, j, k) in the data:
+>>Extract the time series data of that voxel into the variable 'voxel_data'
+>>Fit a linear regression model with the 'design_matrix' as the independent variable and 'voxel_data' as the dependent variable. Fit the model with the option to not fit an intercept and store the model in the variable 'model'
+>>Store the coefficient of the second column of the design matrix in the 'estimated_flows' array at the same location as the voxel
+>>Create a new Nifti image 'new_img' using the 'estimated_flows' data and the affine matrix of the original 'img'
+>>Save the 'new_img' as a .nii file
+>>Load the 'estimated_flows' data back into the variable 'img'
+>>Flatten the 'data' variable so it becomes a one-dimensional array
+>>Initialize an array 'labels' with the same size as 'data'
+>>Assign 0 to all elements in 'labels' corresponding to negative values in 'data' and 1 to all elements corresponding to positive values in 'data'
+>>Split the data and labels into training and test sets (80% training and 20% test)
+>>Train a logistic regression classifier using the training data
+>>Use the trained classifier to make predictions on the test data
+>>Calculate the accuracy of the classifier by comparing the predicted labels and the true test labels
+>>Print the accuracy in percentage format.
