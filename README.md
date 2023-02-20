@@ -9,5 +9,5 @@ Different neurotransmitters have distinct effects on the neurovascular system an
 
 By analyzing the changes in blood flow in a fMRI scan, machine learning algorithms can identify patterns that correspond to specific neurotransmitters, allowing the prediction of the type of neurotransmitter expressed in the brain.
 
-##Pre-processing data
+## Pre-processing data
 The raw fMRI data underwent pre-processing using the Statistical Parametric Mapping toolbox (SPM-12) in MATLAB, which involved a series of operations to obtain denoised fMRI data. The data was first converted from DICOM format to the standard neuro imaging format (.nii or Nifti). Slice time realignment was then performed to ensure that the data was acquired simultaneously and normalized with the acquisition time. Next, realign and estimate operations were used to correct for translational and rotational motion and generate a mean image, which was used to set the origin based on standard brain anatomy configurations. Finally, co-registration of structural and functional brain images was performed to compensate for the high temporal resolution and low spatial resolution of fMRI data.
